@@ -4,8 +4,8 @@ import "./Head.css";
 
 const Header = () => (
 
-<nav class="navbar navbar-light bg-light">
-    <img src="images/Got.png" width="100%" height="30" class="d-inline-block align-top" alt="GoT"/>
+<nav className="navbar navbar-light bg-dark">
+    <img src="images/Got.png" width="700px" height="75" className="d-inline-block align-top" alt="GoT"/>
 </nav>
 
 );

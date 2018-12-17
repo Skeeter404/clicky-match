@@ -1,62 +1,74 @@
 [
-{
-    "id": 1,
-    "name": "Arya",
-    "image": "/images/Arya.jpg"
-},
-{
-    "id": 2,
-    "name": "Bran",
-    "image": "/images/Bran.png"
-},
-{
-    "id": 3,
-    "name": "Brienne",
-    "image": "/images/Brienne.jpg"
-},
-{
-    "id": 4,
-    "name": "Bronn",
-    "image": "/images/Bronn.jpg"
-},
-{
-    "id": 5,
-    "name": "Cersei",
-    "image": "/images/Cersei.jpg"
-},
-{
-    "id": 6,
-    "name": "Daenerys",
-    "image": "/images/Daenerys.jpg"
-},
-{
-    "id": 7,
-    "name": "Jaime",
-    "image": "/images/Jaime.jpg"
-},
-{
-    "id": 8,
-    "name": "Mountain",
-    "image": "/images/Mountain.jpg"
-},
-{
-    "id": 9,
-    "name": "Sandor",
-    "image": "/images/Sandor.png"
-},
-{
-    "id": 10,
-    "name": "Sansa",
-    "image": "/images/Sansa.jpg"
-},
-{
-    "id": 11,
-    "name": "Jon",
-    "image": "/images/Snow.jpg"
-},
-{
-    "id": 12,
-    "name": "Tyrion",
-    "image": "/images/Tyrion.jpg"
-}
+    {
+        "id": 1,
+        "name": "Arya",
+        "clicked": false,
+        "image": "/images/Arya.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Bran",
+        "clicked": false,
+        "image": "/images/Bran.png"
+    },
+    {
+        "id": 3,
+        "name": "Brienne",
+        "clicked": false,
+        "image": "/images/Brienne.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Bronn",
+        "clicked": false,
+        "image": "/images/Bronn.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Cersei",
+        "clicked": false,
+        "image": "/images/Cersei.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Daenerys",
+        "clicked": false,
+        "image": "/images/Daenerys.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Jaime",
+        "clicked": false,
+        "image": "/images/Jaime.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Mountain",
+        "clicked": false,
+        "image": "/images/Mountain.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Sandor",
+        "clicked": false,
+        "image": "/images/Sandor.png"
+    },
+    {
+        "id": 10,
+        "name": "Sansa",
+        "clicked": false,
+        "image": "/images/Sansa.jpg"
+    },
+    {
+        "id": 11,
+        "name": "Jon",
+        "clicked": false,
+        "image": "/images/Snow.jpg"
+    },
+    {
+        "id": 12,
+        "name": "Tyrion",
+        "clicked": false,
+        "image": "/images/Tyrion.jpg"
+    }
 ]
