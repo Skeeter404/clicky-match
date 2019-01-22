@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from "./components/head/Head";
 import Card from "./components/CharCard/Card";
 import cards from "./cards.json";
+import "./App.css";
 
 const styles = {
   body: {
@@ -58,6 +59,7 @@ class App extends Component {
 
           <div style={styles.body} className="App">
             <Header />
+            <br></br>
             <h4 className="text align: center">Click on an image to increase your score! Don't click on any image more than once, in order to win!</h4>
             <br></br>
             <div>
