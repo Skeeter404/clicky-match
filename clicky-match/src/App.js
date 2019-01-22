@@ -14,10 +14,7 @@ const styles = {
   }
 };
 
-// const characters = cards.sort(() => 0.5 - Math.random());
-const characters = cards;
-
-
+const characters = cards.sort(() => 0.5 - Math.random());
 
 
 
@@ -26,164 +23,49 @@ class App extends Component {
   state = {
     characters,
     currentScore: 0,
-    highScore: 0
+    highScore: 0,
+    clicked: []
   };
 
   shuffleCards = () => {
-    const shuffleArray = (array) => {
-      for (var i = array.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-      }
-      return array
-    }
-    var shuffledArray = shuffleArray(this.state.characters)
-    this.setState({ characters: shuffledArray });
+    const characters = cards.sort(() => 0.5 - Math.random());
+    this.setState({ characters: characters });
   };
 
-  handleClick = (event, id) => {
-    event.preventDefault();
+  updateScore = () => {
+    this.setState({ currentScore: this.state.currentScore + 1 });
+    const newScore = this.state.currentScore + 1;
+    this.shuffleCards();
+    if (newScore >= this.state.highScore) {
+      this.setState({ highScore: newScore })
+    };
+  };
 
-    //looop over array of data looking for obj that matches the id of the card clicked
-    //if this.state.characters[0].id === id
-    //know we found matching card
-    //if this.state.characters[0].clicked === false
-    //know that is hasn't been clicked yet
-    //increment score
-    //else
-    //reset game
-    //reset score
+  handleClick = id => {
+    if (this.state.clicked.indexOf(id) === -1) {
+      this.setState({ clicked: [...this.state.clicked, id] });
+      this.updateScore();
+    } else {
+      this.setState({ currentScore: 0 });
+      this.setState({ clicked: [] });
+      this.shuffleCards();
+    };
+  };
 
-    for (let i = 0; i < this.state.characters.length; i++) {
-
-      if (this.state.characters[i].id === id) {
-
-        if (this.state.characters[i].clicked === false) {
-
-          this.state.characters[i].clicked = true
-
-          this.setState({
-            currentScore: this.state.currentScore + 1
-          });
-
-          if (this.state.currentScore >= this.state.highScore) {
-            this.setState({
-              highScore: this.state.highScore + 1
-            })
-          }
-        }
-        else {
-          //reset game
-          this.setState({
-            currentScore: 0,
-            characters: [
-              {
-                  id: 1,
-                  name: "Arya",
-                  clicked: false,
-                  image: "/images/Arya.jpg"
-              },
-              {
-                  id: 2,
-                  name: "Bran",
-                  clicked: false,
-                  image: "/images/Bran.png"
-              },
-              {
-                  id: 3,
-                  name: "Brienne",
-                  clicked: false,
-                  image: "/images/Brienne.jpg"
-              },
-              {
-                  id: 4,
-                  name: "Bronn",
-                  clicked: false,
-                  image: "/images/Bronn.jpg"
-              },
-              {
-                  id: 5,
-                  name: "Cersei",
-                  clicked: false,
-                  image: "/images/Cersei.jpg"
-              },
-              {
-                  id: 6,
-                  name: "Daenerys",
-                  clicked: false,
-                  image: "/images/Daenerys.jpg"
-              },
-              {
-                  id: 7,
-                  name: "Jaime",
-                  clicked: false,
-                  image: "/images/Jaime.jpg"
-              },
-              {
-                  id: 8,
-                  name: "Mountain",
-                  clicked: false,
-                  image: "/images/Mountain.jpg"
-              },
-              {
-                  id: 9,
-                  name: "Sandor",
-                  clicked: false,
-                  image: "/images/Sandor.png"
-              },
-              {
-                  id: 10,
-                  name: "Sansa",
-                  clicked: false,
-                  image: "/images/Sansa.jpg"
-              },
-              {
-                  id: 11,
-                  name: "Jon",
-                  clicked: false,
-                  image: "/images/Snow.jpg"
-              },
-              {
-                  id: 12,
-                  name: "Tyrion",
-                  clicked: false,
-                  image: "/images/Tyrion.jpg"
-              }
-          ]
-          });
-
-        }
-      }
-    }
-  }
-
-      //   if (this.state.clicked === false) {
-      //     this.setState({
-      //       correct: this.state.correct + 1,
-      //       clicked: true
-      //     });
-      //   } else {
-      //     this.setState({
-      //       correct: 0,
-      //       clicked: false
-      //     });
-      //     this.shuffleCards();
-      //   };
-      // };
 
       render() {
         return (
 
           <div style={styles.body} className="App">
             <Header />
-            <p className="text align: center">Click on an image to increase your score! Don't click on any image more than once, in order to win!</p>
+            <h4 className="text align: center">Click on an image to increase your score! Don't click on any image more than once, in order to win!</h4>
+            <br></br>
             <div>
-              Current Score: <span>{this.state.currentScore}</span>
-              <br></br>
-              High Score: <span>{this.state.highScore}</span>
+              <h4>Current Score: <span>{this.state.currentScore}</span></h4>
+              
+              <h4>High Score: <span>{this.state.highScore}</span></h4>
             </div>
+            <br></br>
             <section>
               <div className="row container-fluid">
                 {
